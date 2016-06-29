@@ -12,11 +12,9 @@ namespace Matematika
         {
             if (broj < 0)
                 throw new ArgumentOutOfRangeException(nameof(broj));
-            if (broj == 0)
-                return 1;
-            long rezultat = broj;
-            while (--broj > 1)
-                rezultat *= broj;
+            long rezultat = 1;
+            for (int i = 2; i <= broj; ++i)
+                rezultat *= i;
             return rezultat;
         }
     }
